@@ -28,9 +28,12 @@ PAM
 First we configured Jenkins on the localhost - On the dashboard Click Manage Jenkins -> Configure System
 
 1 We added jdk and maven configurations to Jenkins.
+
 2 We then did Git installations to connect it to github.
+
 3 We provided Global configurations for Github to access our repo.
-[image1]
+
+![image1](/screenshot/image1.jpg)
 
 
 Next we can start creating a new job for Jenkins. Click on new job. Select Freestyle project and give name. Click next. 
@@ -41,52 +44,52 @@ Then we selected to trigger build periodically and passed the value - H * * * *.
 After saving the settings, we can go back to job project and click on Build Now to initiate the build. 
 By clicking on the build, we can check the console output.
 
-##Build Server properties
+####Build Server properties
 
 1. The ability to trigger a build in response to a git commit via a git hook.
 
-To enable jenkins to trigger a build the project in response to a git commit, we modified the git hook file present in the .git directory. We made the following changes in the post-commit file - Add line
-```sh
-/usr/bin/curl http://localhost:8080/job/demo4/build?token=401ca1bd52edc632f8e6ab17563db9a42291ac3b
-```
-where the token value was generated from github.com and the initial part of the address is the url of the job on jenkins.
-[image2]
+  To enable jenkins to trigger a build the project in response to a git commit, we modified the git hook file present in the .git directory. We made the following changes in the post-commit file - Add line
+  ```sh
+  /usr/bin/curl http://localhost:8080/job/demo4/build?token=401ca1bd52edc632f8e6ab17563db9a42291ac3b
+  ```
+  where the token value was generated from github.com and the initial part of the address is the url of the job on jenkins.
+  ![image2](/screenshot/image2.jpg)
 
 2. The ability to setup dependencies for the project and restore to a clean state.
 
-For our project, the server built installed all the necessary dependencies and to restore to a clean state we did - mvn clean install
-[image3]
-[image4]
+  For our project, the server built installed all the necessary dependencies and to restore to a clean state we did - mvn clean install
+  ![image3](/screenshot/image3.jpg)
+  ![image4](/screenshot/image4.jpg)
 
 3. The ability to execute a build script (e.g., shell, maven)
 
-In the build configurations of the project, we added Maven version 3.2.1 and also provided it with a Goal "clean install" thus the Maven executes pom.xml files in the given repo, every first time a new repo is built on our server
-
-[image5]
-[image6]
+  In the build configurations of the project, we added Maven version 3.2.1 and also provided it with a Goal "clean install" thus the Maven executes pom.xml files in the given repo, every first time a new repo is built on our server
+  
+  ![image5](/screenshot/image5.jpg)
+  ![image6](/screenshot/image6.jpg)
 
 4. The ability to run a build on multiple nodes (e.g. jenkins slaves, go agents, or a spawned droplet/AWS.).
 
-We had created instances on EC2 and used them as slaves in our project. 
-
-Using the EC2 plugin, we provided credentials to Amazon Web Services (Our AccessKey ID and Secret Access Key).
-
-Then for the instances we had on EC2, we created AMI for the same on Jenkins. We also added a basic script to install JAVA on the instance to match our project requirements. 
-
-In the Jenkins Dashboard, Click Manage Jenkins-> Manage Nodes. Here using the EC2 instances, we created new nodes, which act as slaves for this job. These slaves inherit all the configurations made on AMI in EC2 plugin. Thus when there are new builds, more than what master can accomodate, they are re-directed to these slaves and are executed on them.
-
-[image7]
-[image8]
-[image9]
+  We had created instances on EC2 and used them as slaves in our project. 
+  
+  Using the EC2 plugin, we provided credentials to Amazon Web Services (Our AccessKey ID and Secret Access Key).
+  
+  Then for the instances we had on EC2, we created AMI for the same on Jenkins. We also added a basic script to install JAVA on the instance to match our project requirements. 
+  
+  In the Jenkins Dashboard, Click Manage Jenkins-> Manage Nodes. Here using the EC2 instances, we created new nodes, which act as slaves for this job. These slaves inherit all the configurations made on AMI in EC2 plugin. Thus when there are new builds, more than what master can accomodate, they are re-directed to these slaves and are executed on them.
+  
+  ![image7](/screenshot/image7.jpg) 
+  ![image8](/screenshot/image8.jpg)
+  ![image9](/screenshot/image9.jpg)
 
 5. The ability to retrieve the status of the build via http.
 
-Jenkins provide various remote access APIs [link]. We have used the json api to access the last build status via http.
-The following http link provides the status of the last build in JSON format.
-```sh
-http://localhost:8080/job/nd/lastSuccessfulBuild/api/json
-```
-[image10]
+  Jenkins provide various remote access APIs [link]. We have used the json api to access the last build status via http.
+  The following http link provides the status of the last build in JSON format.
+  ```sh
+  http://localhost:8080/job/nd/lastSuccessfulBuild/api/json
+  ```
+  ![image10](/screenshot/image10.jpg)
 
 [here]:https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
 [website]: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins#InstallingJenkins-WindowsInstallation
