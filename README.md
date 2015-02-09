@@ -33,7 +33,7 @@ First we configured Jenkins on the localhost - On the dashboard Click Manage Jen
 
 3 We provided Global configurations for Github to access our repo.
 
-![image1](/screenshot/image1.jpg)
+![image1](/screenshots/image1.jpg)
 
 
 Next we can start creating a new job for Jenkins. Click on new job. Select Freestyle project and give name. Click next. 
@@ -53,20 +53,20 @@ By clicking on the build, we can check the console output.
   /usr/bin/curl http://localhost:8080/job/demo4/build?token=401ca1bd52edc632f8e6ab17563db9a42291ac3b
   ```
   where the token value was generated from github.com and the initial part of the address is the url of the job on jenkins.
-  ![image2](/screenshot/image2.jpg)
+  ![image2](/screenshots/image2.jpg)
 
 2. The ability to setup dependencies for the project and restore to a clean state.
 
   For our project, the server built installed all the necessary dependencies and to restore to a clean state we did - mvn clean install
-  ![image3](/screenshot/image3.jpg)
-  ![image4](/screenshot/image4.jpg)
+  ![image3](/screenshots/image3.jpg)
+  ![image4](/screenshots/image4.jpg)
 
 3. The ability to execute a build script (e.g., shell, maven)
 
   In the build configurations of the project, we added Maven version 3.2.1 and also provided it with a Goal "clean install" thus the Maven executes pom.xml files in the given repo, every first time a new repo is built on our server
   
-  ![image5](/screenshot/image5.jpg)
-  ![image6](/screenshot/image6.jpg)
+  ![image5](/screenshots/image5.jpg)
+  ![image6](/screenshots/image6.jpg)
 
 4. The ability to run a build on multiple nodes (e.g. jenkins slaves, go agents, or a spawned droplet/AWS.).
 
@@ -78,9 +78,10 @@ By clicking on the build, we can check the console output.
   
   In the Jenkins Dashboard, Click Manage Jenkins-> Manage Nodes. Here using the EC2 instances, we created new nodes, which act as slaves for this job. These slaves inherit all the configurations made on AMI in EC2 plugin. Thus when there are new builds, more than what master can accomodate, they are re-directed to these slaves and are executed on them.
   
-  ![image7](/screenshot/image7.jpg) 
-  ![image8](/screenshot/image8.jpg)
-  ![image9](/screenshot/image9.jpg)
+  ![image7](/screenshots/image7.jpg) 
+  ![image8](/screenshots/image8.jpg)
+  ![image9](/screenshots/image9.jpg)
+  ![image9](/screenshots/image9.jpg)
 
 
 5. The ability to retrieve the status of the build via http.
