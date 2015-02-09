@@ -82,6 +82,7 @@ By clicking on the build, we can check the console output.
   ![image8](/screenshot/image8.jpg)
   ![image9](/screenshot/image9.jpg)
 
+
 5. The ability to retrieve the status of the build via http.
 
   Jenkins provide various remote access APIs [link]. We have used the json api to access the last build status via http.
@@ -89,7 +90,7 @@ By clicking on the build, we can check the console output.
   ```sh
   http://localhost:8080/job/nd/lastSuccessfulBuild/api/json
   ```
-  ![image10](/screenshot/image10.jpg)
+  ![image12](/screenshot/image12.jpg)
 
 [here]:https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
 [website]: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins#InstallingJenkins-WindowsInstallation
