@@ -81,8 +81,9 @@ By clicking on the build, we can check the console output.
   ![image7](/screenshots/image7.jpg) 
   ![image8](/screenshots/image8.jpg)
   ![image9](/screenshots/image9.jpg)
-  ![image9](/screenshots/image9.jpg)
-
+  ![image10](/screenshots/image10.jpg)
+  ![image11](/screenshots/image11.jpg)
+  ![image13](/screenshots/image13.jpg)
 
 5. The ability to retrieve the status of the build via http.
 
