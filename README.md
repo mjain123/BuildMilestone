@@ -92,7 +92,7 @@ By clicking on the build, we can check the console output.
   ```sh
   http://localhost:8080/job/nd/lastSuccessfulBuild/api/json
   ```
-  ![image12](/screenshot/image12.jpg)
+  ![image12](/screenshots/image12.jpg)
 
 [here]:https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins
 [website]: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins#InstallingJenkins-WindowsInstallation
