@@ -5,9 +5,9 @@ We have used Jenkins Application and have configured it to work according our re
 Jenkins is a easy-to-use continuous integration application which helps developers to integrate changes to the project, and makes it easier for users to obtain a fresh build. It provides various features which can be read [here].
 
 ### Build
-Jenkins was installed on a linux machine using the jenkins.war file available int its [website].
+Jenkins was installed on a linux machine using the jenkins.war file available on its [website].
 
-The default home directory of Jetkins is - /home/sujith/.jenkins.
+The default home directory of Jetkins is - /home/user/.jenkins.
 
 The configuration setup was done using the dashboard by runnning it at localhost. By default it works at port 8080. 
 http://localhost:8080/
