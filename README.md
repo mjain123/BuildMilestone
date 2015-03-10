@@ -15,15 +15,15 @@ http://localhost:8080/
 There were certain plugins that are required to make Jenkins environment suitable to our build server.
 
 We installed various plugins for -
-Git
-EC2
-JAVA
-SSH
-Windows/Ubuntu Slaves
-Maven
-Credentials
-S3
-PAM
+- Git
+- EC2
+- JAVA
+- SSH
+- Windows/Ubuntu Slaves
+- Maven
+- Credentials
+- S3
+- PAM
 
 First we configured Jenkins on the localhost - On the dashboard Click Manage Jenkins -> Configure System
 
